@@ -1,0 +1,86 @@
+$main-color: rgb(55, 68, 126);
+$white-color: #fff;
+$dark-color: rgb(9, 17, 51);
+$light-color: rgb(111, 124, 178);
+$foot-color: rgb(231, 236, 255);
+
+@mixin container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@mixin roboto-regular {
+  font-family: "Roboto", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin roboto-medium {
+  font-family: "Roboto", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin roboto-black {
+  font-family: "Roboto", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+@mixin center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button($background, $color) {
+  @include center-flex;
+  @include roboto-medium;
+  max-width: 200px;
+  padding: 5px 25px;
+  background-color: $background;
+  color: $color;
+  font-size: 16px;
+  border:  2px solid $main-color;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: lighten($background, 10%);
+    color: darken($color, 10%);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.primary-button {
+  @include button($main-color, $white-color);
+}
+
+@mixin title($font-size) {
+  @include roboto-medium;
+  color: $dark-color;
+  font-size: $font-size;
+}
+
+@mixin description($font-size) {
+  @include roboto-regular;
+  color: $light-color;
+  font-size: $font-size;
+}
+
+@mixin images {
+  flex: 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 320px;
+  width: 100%;
+
+  @media all and (max-width: 660px) {
+    flex: 0 0 auto;
+    height: 120px;
+  }
+}
