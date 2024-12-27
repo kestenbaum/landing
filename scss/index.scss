@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  overflow-x: hidden;
   height: 60px;
 }
 
@@ -213,7 +214,19 @@
 }
 
 .price {
-  background-color: global.$foot-color;
+  position: relative;
+  background-color: rgba(global.$foot-color, 0.8);
+}
+
+.price-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  clip-path: ellipse(50% 70% at 50% 0%);
+  background-color: global.$white-color;
+  z-index: 1;
 }
 
 .price-title {

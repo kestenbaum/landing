@@ -38,6 +38,10 @@ a {
   color: inherit;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .primary-button {
   display: flex;
   align-items: center;
@@ -72,6 +76,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  overflow-x: hidden;
   height: 60px;
 }
 
@@ -365,7 +370,19 @@ a {
 }
 
 .price {
-  background-color: rgb(231, 236, 255);
+  position: relative;
+  background-color: rgba(231, 236, 255, 0.8);
+}
+
+.price-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  clip-path: ellipse(50% 70% at 50% 0%);
+  background-color: #fff;
+  z-index: 1;
 }
 
 .price-title {

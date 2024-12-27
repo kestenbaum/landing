@@ -4,6 +4,10 @@ $dark-color: rgb(9, 17, 51);
 $light-color: rgb(111, 124, 178);
 $foot-color: rgb(231, 236, 255);
 
+body {
+  overflow-x: hidden;
+}
+
 @mixin container {
   width: 100%;
   max-width: 1200px;
