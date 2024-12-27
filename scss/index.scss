@@ -108,13 +108,15 @@
 .wrapper {
   display: flex;
   justify-content: space-between;
-  flex-direction: row-reverse;
   align-items: center;
+  transition: all 1s ease;
 
   .content-left {
     flex: 1;
     padding-right: 20px;
     max-width: 450px;
+    opacity: 1;
+    transition: all 1s ease;
 
     .title {
       @include global.title(36px);
@@ -129,7 +131,29 @@
 
   .content-right {
     @include global.images;
+    opacity: 1;
+    transition: all 1s ease;
   }
+}
+
+.content-left {
+  transform: translateX(-100%);
+}
+
+.content-right {
+  transform: translateX(100%);
+}
+
+.wrapper.shrink .content-left {
+  transform: translateX(0);
+}
+
+.wrapper.shrink .content-right {
+  transform: translateX(0);
+}
+
+.wrapper.shrink {
+  opacity: 1;
 }
 
 .mobile-section {

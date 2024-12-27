@@ -244,13 +244,15 @@ body {
 .wrapper {
   display: flex;
   justify-content: space-between;
-  flex-direction: row-reverse;
   align-items: center;
+  transition: all 1s ease;
 }
 .wrapper .content-left {
   flex: 1;
   padding-right: 20px;
   max-width: 450px;
+  opacity: 1;
+  transition: all 1s ease;
 }
 .wrapper .content-left .title {
   font-family: "Roboto", serif;
@@ -275,12 +277,34 @@ body {
   background-size: contain;
   height: 320px;
   width: 100%;
+  opacity: 1;
+  transition: all 1s ease;
 }
 @media all and (max-width: 660px) {
   .wrapper .content-right {
     flex: 0 0 auto;
     height: 120px;
   }
+}
+
+.content-left {
+  transform: translateX(-100%);
+}
+
+.content-right {
+  transform: translateX(100%);
+}
+
+.wrapper.shrink .content-left {
+  transform: translateX(0);
+}
+
+.wrapper.shrink .content-right {
+  transform: translateX(0);
+}
+
+.wrapper.shrink {
+  opacity: 1;
 }
 
 .mobile-section {
